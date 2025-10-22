@@ -1,0 +1,86 @@
+# Файлы сборки и компиляции
+[Bb]in/
+[Oo]bj/
+bin/
+obj/
+x64/
+x86/
+[Dd]ebug/
+[Rr]elease/
+[Bb]uild/
+artifacts/
+publish/
+
+# Файлы Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.[Cc]ache
+*.vcxproj.user
+
+# Файлы Rider
+.idea/
+*.sln.iml
+
+# Папка с NuGet пакетами
+packages/
+[Nn]u[Gg]et[Cc]ache/
+*.nupkg
+
+# Файлы диагностики
+logs/
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.log
+*.tlog
+
+# Временные файлы
+[Tt]emp/
+[Tt]mp/
+*.tmp
+*.temp
+*.tmp.proj
+*.tmp.txt
+
+# Файлы резервных копий
+*.backup
+*.bak
+*.gho
+*.ori
+
+# Файлы операционных систем
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Файлы настроек приложения
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# Файлы базы данных (если используются)
+*.mdf
+*.ldf
+*.sdf
+
+# Файлы пакетного менеджера (если есть фронтенд)
+node_modules/
+jspm_packages/
+
+# Файлы установщиков
+*.msi
+*.msm
+*.msp
+
+# Файлы покрытия тестов
+coverage/
+*.coverage
+*.coveragexml
+
+# Файлы профилирования
+*.psess
+*.vsp
+*.vspx
