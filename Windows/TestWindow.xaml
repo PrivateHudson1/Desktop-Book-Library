@@ -1,0 +1,124 @@
+﻿<Window x:Class="Library.Windows.TestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library.Windows"
+        mc:Ignorable="d"
+        Title="TestWindow"  d:DesignHeight="820" d:DesignWidth="1100"
+        Background="Black"
+        Loaded="Window_Loaded">
+
+
+    <Grid Background="#222">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <ScrollViewer HorizontalScrollBarVisibility="Hidden"
+                              ClipToBounds="false"
+                                 HorizontalAlignment="Center"
+                                 VerticalScrollBarVisibility="Disabled"
+                                 Width="850" Height="600"
+                                 Background="Transparent">
+                <ItemsControl x:Name="SliderItems"
+                                
+                                  Background="Transparent"
+                                  d:ItemsSource="{d:SampleData ItemCount=3}">
+
+
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" Background="Transparent" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border Width="270"
+                                         Height="550"
+                                        Margin="0 0 10 0"
+                                         Style="{StaticResource borderFux}"     
+                                            IsHitTestVisible="True"
+                                     SnapsToDevicePixels="True"                  
+                                      x:Name="firstBookBorder">
+
+                                <Grid Background="Transparent">
+
+                                    <StackPanel Orientation="Vertical" Background="Transparent">
+                                        <Image Source="{Binding image}"
+ Width="140"
+                                                   Height="160"
+ />
+                                        <TextBlock Text="{Binding fileName}"
+                                 FontSize="30"
+                                                       TextWrapping="wrap"
+                              Foreground="WhiteSmoke"
+                              Width="230"
+                              Height="130"
+                              TextAlignment="Center"
+                              VerticalAlignment="Center"/>
+
+                                        <TextBlock Text="{Binding Author}"
+                            FontSize="20"
+                                       TextWrapping="Wrap"
+                                Foreground="WhiteSmoke"
+                                Width="230"
+                                Height="50"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+                                        <Button Style="{StaticResource RoundFux}" Height="50" 
+                                    Content="Читать"
+                                    FontWeight="DemiBold"
+                                    Width="150"
+                                    x:Name="readBut"
+                                  
+                                  Margin="0 0 0 20"/>
+                                        <Button Style="{StaticResource RoundGray}"
+                                    Height="50"
+                                    Content="Скачать"
+                                    Width="150"
+                                    FontWeight="DemiBold"
+                                    x:Name="downloadBut"
+                               
+                                        Margin="0 0 0 20"
+                                    />
+                                        <Button Style="{StaticResource RoundGray}"
+                                    Height="50"
+Content="Удалить"
+Width="150"
+FontWeight="DemiBold"/>
+                                    </StackPanel>
+
+
+
+                                </Grid>
+
+                            </Border>
+
+
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer
+                                >
+
+
+        </Grid>
+        <!-- Контейнер прокрутки -->
+    
+
+        <!-- Кнопки навигации -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
+            <Button Content="⟵" Width="50" Height="40" Margin="5" Click="Previous_Click"/>
+            <Button Content="⟶" Width="50" Height="40" Margin="5" Click="Next_Click"/>
+        </StackPanel>
+
+    </Grid>
+
+</Window>

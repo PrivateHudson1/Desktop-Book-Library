@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="Library.Components.DownloadComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="400">
+
+    <Border Style="{StaticResource DownloadBorder}" Background="#FF1C1C1C">
+       
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <StackPanel Orientation="Vertical">
+                    <Button Style="{StaticResource IconButtonStyleText6}"
+                            x:Name="fbBut"
+                            Click="fbBut_Click"/>
+                    <TextBlock Text="Подойдет для смартфонов и планшетов на Android, различных программ для чтения"
+                               TextWrapping="Wrap"
+                               FontSize="15"
+                               FontWeight="DemiBold"
+                               Foreground="LightGray"/>
+                </StackPanel>
+                   
+                </Grid>
+
+                <Grid Grid.Row="1">
+                <StackPanel Orientation="Vertical">
+                    <Button Style="{StaticResource IconButtonStyleText7}"
+                            x:Name="txtBut"
+                            Click="txtBut_Click"/>
+                    <TextBlock Text="Доступно на многих устройствах"
+                 TextWrapping="Wrap"
+                 FontSize="15"
+                                FontWeight="DemiBold"
+                 Foreground="LightGray"/>
+                </StackPanel>
+            </Grid>
+
+                <Grid Grid.Row="2">
+                <StackPanel Orientation="Vertical">
+                    <Button Style="{StaticResource IconButtonStyleText8}"
+                            x:Name="pdfBut"
+                            Click="pdfBut_Click"/>
+                    <TextBlock Text="Можно открыть через Adobe Reader"
+                 TextWrapping="Wrap"
+                 FontSize="15"
+                                FontWeight="DemiBold"
+                 Foreground="LightGray"/>
+                </StackPanel>
+            </Grid>
+
+                <Grid Grid.Row="3">
+                <StackPanel Orientation="Vertical">
+                    <Button Style="{StaticResource IconButtonStyleText9}"
+                            Width="110"
+                            x:Name="iosBut"
+                            Click="iosBut_Click"/>
+                    <TextBlock Text="Адаптирован под устройства IOS, многие приложения для чтения"
+                 TextWrapping="Wrap"
+                 FontSize="15"
+                                FontWeight="DemiBold"
+                 Foreground="LightGray"/>
+                </StackPanel>
+            </Grid>
+
+                <Grid Grid.Row="4" Height="60">
+                    <Button Style="{StaticResource IconButtonStyleLeftRedirectBlack}"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            x:Name="backRedirect"
+                            Click="backRedirect_Click"/>
+
+                </Grid>
+             
+            </Grid>
+        
+    
+    </Border>
+</UserControl>

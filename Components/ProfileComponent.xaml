@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="Library.Components.ProfileComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library.Components"
+             mc:Ignorable="d" 
+                               d:DesignHeight="820" d:DesignWidth="1100"
+xmlns:ic ="https://github.com/helluvamatt/BootstrapIcons.Wpf/">
+
+    <Border >
+        <Grid Background="#801C1C1C" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <StackPanel x:Name="ButtonPanel" Orientation="Vertical" Width="400" HorizontalAlignment="Left">
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <ic:BootstrapIcon Icon="PersonCircle" Width="80" Height="80"
+           Margin="0 10 0 0"
+           Foreground="WhiteSmoke"/>
+                        <TextBlock Text="PvtHudson"
+                 Foreground="WhiteSmoke"
+                 FontSize="30"
+                 x:Name="userName"
+                 VerticalAlignment="Center"
+                 Margin="10 0 0 0"
+                 TextWrapping="Wrap"/>
+                    </StackPanel>
+
+
+
+                    <Button Height="50" 
+          Width="360"
+          Margin="0 30 0 0"
+          Style="{StaticResource RoundWhite}"
+          Content="Главная"
+         FontSize="25"
+          FontWeight="DemiBold"
+          Click="changeBackground_Click"/>
+
+                    <Button Height="50"
+          Width="360"
+                             Margin="0 30 0 0"
+            FontSize="25"
+          Content="Подписка"
+          FontWeight="Regular"
+          Style="{StaticResource RoundWhite}"
+           Click="changeBackground_Click"/>
+
+
+                    <Button Height="50"
+          Width="360" Margin="0 30 0 0"
+          Content="Смена пароля"
+          FontWeight="Regular"
+            FontSize="25"
+          Style="{StaticResource RoundWhite}"
+           Click="changeBackground_Click"/>
+
+
+                    <!--<Button Height="50"
+          Width="360"
+                             Margin="0 30 0 0"
+          Content="Настройки"
+          FontWeight="Regular"
+            FontSize="25"
+          Style="{StaticResource RoundWhite}"
+           Click="changeBackground_Click"/>-->
+
+                    <Button Height="50"
+          Width="360"
+                            x:Name="exitBut"
+                            Click="exitBut_Click"
+                             Margin="0 30 0 0"
+          Content="Выход"
+            FontSize="25"
+          FontWeight="Regular"
+          Style="{StaticResource RoundWhite}"
+         />
+
+
+                </StackPanel>
+            </Grid>
+
+
+
+            <Grid Grid.Column="1" Width="700">
+                <Frame x:Name="profileFrame" NavigationUIVisibility="Hidden"/>
+            </Grid>
+
+        </Grid>
+    </Border>
+   
+</UserControl>

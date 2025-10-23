@@ -1,0 +1,267 @@
+﻿<UserControl x:Class="Library.Components.SearchComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library.Components"
+             mc:Ignorable="d" 
+             xmlns:component="clr-namespace:Library.Components"
+             xmlns:converter="clr-namespace:Library.Converters"
+             xmlns:ic ="https://github.com/helluvamatt/BootstrapIcons.Wpf/"
+           d:DesignHeight="820" d:DesignWidth="900"
+              Loaded="Page_Loaded">
+
+    
+    <Border CornerRadius="10" 
+           Width="800" 
+           Height="720" 
+           BorderThickness="2" 
+           Background="#801C1C1C"
+>
+
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Column="0" >
+                <StackPanel Orientation="Vertical">
+
+                    <TextBlock Text="Выберите жанр"
+                               FontSize="20"
+                               HorizontalAlignment="Center"
+                               Foreground="#FFFB009E"
+                               FontWeight="DemiBold"
+                               Padding="10"/>
+
+                    <Button Style="{StaticResource IconButtonStyleText1}"
+                            Width="200"
+                            Tag="8"
+                            Height="40"
+                            x:Name="genreBut"
+                            Click="genreBut_Click"
+                            Margin="0 0 0 10"
+                            />
+                    <Button Style="{StaticResource IconButtonStyleText2}"
+                            Width="200"
+                            Tag="9"
+                            Height="40"
+                           Margin="0 0 0 10"
+                                    Click="genreBut_Click"/>
+                    <Button Style="{StaticResource IconButtonStyleText3}"
+                            Width="200"
+                            Tag="10"
+                            Height="40"
+                             Margin="0 0 0 10"
+                                    Click="genreBut_Click"/>
+                    <Button Style="{StaticResource IconButtonStyleText4}"
+                            Width="200"
+                            Tag="11"
+                            Height="40"
+                             Margin="0 0 0 10"
+                                    Click="genreBut_Click"/>
+                    <Button Style="{StaticResource IconButtonStyleText5}"
+                            Width="200"
+                            Tag="12"
+                            Height="40"
+                             Margin="0 0 0 10"
+                                    Click="genreBut_Click"/>
+                    <Button Style="{StaticResource IconButtonStyleText10}"
+         Width="200"
+                            Tag="1"
+                             Margin="0 0 0 10"
+         Height="40"
+                                    Click="genreBut_Click"/>
+
+                    <Button Style="{StaticResource IconButtonStyleText11}"
+         Width="200"
+                            Tag="2"
+         Height="40"
+                             Margin="0 0 0 10"
+                                    Click="genreBut_Click"/>
+
+                    <Button Style="{StaticResource IconButtonStyleText12}"
+         Width="200"
+                            Tag="5"
+                             Margin="0 0 0 10"
+         Height="40"
+                                    Click="genreBut_Click"/>
+
+                    <Button Style="{StaticResource IconButtonStyleText13}"
+         Width="200"
+                            Tag="6"
+                             Margin="0 0 0 10"
+         Height="40"
+                                    Click="genreBut_Click"/>
+
+                    <Button Style="{StaticResource IconButtonStyleText14}"
+         Width="200"
+                            Tag="3"
+                             Margin="0 0 0 10"
+         Height="40"
+                                    Click="genreBut_Click"/>
+
+                    <Button Style="{StaticResource IconButtonStyleText15}"
+         Width="200"
+                             Margin="0 0 0 10"
+                            Tag="4"
+         Height="40"
+                                    Click="genreBut_Click"/>
+
+                    <Button Style="{StaticResource IconButtonStyleText16}"
+         Width="200"
+                             Margin="0 0 0 10"
+                            Tag="7"
+         Height="40"
+                                    Click="genreBut_Click"/>
+
+
+
+
+                </StackPanel>
+            </Grid>
+            
+            
+            
+            <Grid Grid.Column="1" Margin="0 10 0 0" >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                
+                <TextBox Width="400" 
+                 Height="40"
+                         x:Name="searchBox"
+                 Background="Transparent"
+                 VerticalAlignment="Top"
+                     Foreground="WhiteSmoke"
+                     FontSize="20" Margin="98,10,98,0"
+                       TextChanged="SearchBox_TextChanged"   
+                     Style="{StaticResource SearchTextBox}">
+
+                </TextBox>
+
+                <Button Style="{StaticResource IconButtonStyleClose}"
+                        Width="40"
+                        Height="40" 
+                      Click="clearBut_Click"
+                        x:Name="clearBut"
+                        HorizontalAlignment="Left" Margin="503,10,0,0" VerticalAlignment="Top"/>
+
+                <ic:BootstrapIcon Icon="Search"
+                          Width="40"
+                              Height="40"
+                              Foreground="WhiteSmoke" 
+                                  Margin="34,10,522,30" />
+
+
+
+                <Grid Grid.Row="1">
+                    <ListBox Width="550"
+                          
+                             Background="Transparent" 
+                             x:Name="MainList"
+                             ItemContainerStyle="{StaticResource TransparentListBoxItemStyle}"
+                             BorderBrush="Transparent"
+                            
+                             
+     
+              d:ItemsSource="{d:SampleData ItemCount=3}"
+             BorderThickness="1"  >
+
+                       
+                        
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border Width="520"
+                        Height="200"
+                                       
+                                  Margin="0 0 0 10"   
+                        Style="{StaticResource borderFux}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="220"/>
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid Grid.Column="0">
+                                            <Image Source="{Binding image}"
+                                   Width="195"
+                                   Height="175"/>
+                                        </Grid>
+
+                                        <Grid Grid.Column="1">
+                                            <StackPanel Orientation="Vertical">
+                                                <TextBlock Text="{Binding fileName}" FontSize="30"
+                                           FontWeight="DemiBold"
+                                                           TextWrapping="Wrap"
+                                           Foreground="WhiteSmoke"/>
+                                                <TextBlock Text="{Binding Author}"
+                                           FontWeight="DemiBold"
+                                           FontSize="20"
+                                           Foreground="WhiteSmoke"
+                                                           Margin="0 0 0 30"
+                                           />
+
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Style="{StaticResource RoundGray}"
+                                                            Width="140"
+                                                            Height="50"
+                                                            FontWeight="DemiBold"
+                                                            Content="Подробнее"
+                                                            Margin="0 0 10 0"
+                                                            x:Name="infoBook"
+                                                            Click="infoBook_Click"/>
+                                                    <Button Style="{StaticResource RoundFuxEnable}"
+                                                            Width="140"
+                                                           IsEnabled="{Binding isEnable}"
+                                                            FontWeight="DemiBold"
+                                                            
+                                                            Height="50"
+                                                            Content="{Binding isContent}"
+                                                            x:Name="addBookCollectionBut"
+                                                            Click="addBookCollection_Click"/>
+                                                </StackPanel>
+
+                                            </StackPanel>
+                                        </Grid>
+
+                                        
+
+
+
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+
+
+
+                    </ListBox>
+                </Grid>
+                
+            </Grid>
+
+            <component:ErrorComponent 
+         x:Name="errorComponent"
+         Visibility="Hidden"
+         Width="300"
+         
+                               Height="100"
+                               Margin="0 0 -1000 0"/>
+
+        </Grid>
+        
+
+      
+
+
+
+    </Border>
+</UserControl>
